@@ -1,0 +1,18 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root {
+	-fx-border-width: 8px 0 0 0;
+	-fx-border-color: #008255;
+	-fx-background-color: white;
+	-fx-font-size: 14px;
+	-fx-font-weight: 400;
+	-fx-font-family: Gotham, system-ui, sans-serif;
+	-fx-padding: 40px 30px;
+}
+
+#header-text {
+	-fx-font-size: 36px;
+	-fx-font-weight: 700;
+	-fx-border-width: 0 0 1px 0;
+	-fx-border-color: #d2d7dc;
+	-fx-pref-width: 1200;
+}
