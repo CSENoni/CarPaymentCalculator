@@ -1,15 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.collections.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox id="first-col" HBox.hgrow="ALWAYS">
-	<!-- CODE HERE  -->
-	<Label text="What's your credit score?" />
+<VBox id="first-col" HBox.hgrow="ALWAYS" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox>
+      <children>
+      	<Label text="What's your credit score?">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+         </Label>
+         
+         <ComboBox fx:id="userCredit" promptText="Select Credit Range">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </ComboBox>
+         
+         <Label text="Car price ($)">
+            <padding>
+               <Insets top="15.0" />
+            </padding>
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </Label>
+         
+         <TextField fx:id="userCarPrice">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </TextField>
+         <Label text="After negotiations" textFill="#aba7a7">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding>
+            <font>
+               <Font name="Arial" size="13.0" />
+            </font>
+         </Label>
+         
+         <Label text="Trade-in / down payment ($)">
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <padding>
+               <Insets top="15.0" />
+            </padding>
+         </Label>
+         
+         <TextField fx:id="userDown">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </TextField>
+         <Label text="Your trade-in can be all or part of a down payment" textFill="#aba7a7">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding>
+            <font>
+               <Font name="Arial" size="13.0" />
+            </font>
+         </Label>
+         
+         <Label text="Interest rate (%)">
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+            <padding>
+               <Insets top="15.0" />
+            </padding>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </Label>
+         
+         <TextField fx:id="userInterest">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </TextField>
+         
+         <Label text="A higher credit score means lower interest rates" textFill="#aba7a7">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding>
+            <font>
+               <Font name="Arial" size="13.0" />
+            </font>
+         </Label>
+         
+         <Label text="Number of Months">
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+            <padding>
+               <Insets top="15.0" />
+            </padding>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </Label>
+         
+         <TextField fx:id="userMonths">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </TextField>
+         
+         <Label text="Suggested max: 36 months for used cars, 60 for new" textFill="#aba7a7">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding>
+            <font>
+               <Font name="Arial" size="13.0" />
+            </font>
+         </Label>
+         
+      </children>
+      <VBox.margin>
+         <Insets top="20.0" />
+      </VBox.margin>
+   </VBox>
 </VBox>
-
