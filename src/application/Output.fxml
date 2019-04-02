@@ -7,9 +7,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 
-<VBox id="second-col" HBox.hgrow="ALWAYS">
+<VBox id="second-col">
 	<!-- CODE HERE -->
-	<Label text="Payment details" />
+	<padding>
+		<Insets top="25.0" />
+	</padding>
+	<Label text="Payment details">
+		<font>
+			<Font name="Arial Bold" size="18.0" />
+		</font>
+	</Label>
+	
 </VBox>
 

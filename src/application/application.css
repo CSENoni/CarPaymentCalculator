@@ -10,9 +10,17 @@
 }
 
 #header-text {
-	-fx-font-size: 36px;
+	-fx-font-size: 37px;
 	-fx-font-weight: 700;
 	-fx-border-width: 0 0 1px 0;
 	-fx-border-color: #d2d7dc;
 	-fx-pref-width: 1200;
+}
+
+#first-col {
+	-fx-pref-width: 600;
+}
+
+#second-col {
+	-fx-pref-width: 600;
 }
