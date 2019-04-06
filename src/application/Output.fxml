@@ -1,25 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.collections.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="second-col">
-	<!-- CODE HERE -->
+<VBox id="second-col" xmlns:fx="http://javafx.com/fxml/1">
 	<padding>
 		<Insets top="25.0" />
 	</padding>
+	
 	<Label text="Payment details">
 		<font>
 			<Font name="Arial Bold" size="18.0" />
 		</font>
+      <padding>
+         <Insets bottom="25.0" />
+      </padding>
 	</Label>
 	
+   <Label text="Monthly payment">
+      <font>
+         <Font name="Arial Bold" size="14.0" />
+      </font>
+   </Label>
+   
+   <Label fx:id="outputMonthly"	textFill="#005fb9">
+      <font>
+         <Font name="Arial" size="22.0" />
+      </font>
+   </Label>
+   
+   <Label text="(Before taxes &amp; fees)" textFill="#94a2a8">
+      <padding>
+         <Insets bottom="20.0" />
+      </padding>
+      <font>
+         <Font name="Arial" size="13.0" />
+      </font>
+   </Label>
+   
+   <Label text="Total amount paid">
+      <font>
+         <Font name="Arial Bold" size="14.0" />
+      </font>
+   </Label>
+   
+   <Label fx:id="outputTotal" text="\$0.00" textFill="#005fb9">
+      <font>
+         <Font name="Arial" size="22.0" />
+      </font>
+   </Label>
+   
+   <Label text="(Over the life of the loan)" textFill="#94a2a8">
+      <padding>
+         <Insets bottom="20.0" />
+      </padding>
+      <font>
+         <Font name="Arial" size="13.0" />
+      </font>
+   </Label>
+   
+   <Label text="Total interest paid">
+      <font>
+         <Font name="Arial Bold" size="14.0" />
+      </font>
+   </Label>
+   
+   <Label fx:id="outputInterest" text="\$0.00" textFill="#005fb9">
+      <font>
+         <Font name="Arial" size="22.0" />
+      </font>
+   </Label>
+	
 </VBox>
-
