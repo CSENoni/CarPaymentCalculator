@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -19,7 +23,15 @@
 		</font>
 	</Label>
 
-	<ComboBox fx:id="userCredit" promptText="Select Credit Range">
+	<ComboBox styleClass="box-field" fx:id="userCredit" promptText="Select Credit Range">
+		<items>
+			<FXCollections fx:factory="observableArrayList">
+				<String fx:value="Super prime (781-850)" />
+				<String fx:value="Prime (661-780)" />
+				<String fx:value="Subprime (501-600)" />
+				<String fx:value="Deep subprime (300-500)" />
+			</FXCollections>
+		</items>
 	</ComboBox>
 
 	<Label text="Car price ($)">
