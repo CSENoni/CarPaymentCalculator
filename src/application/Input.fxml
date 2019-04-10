@@ -43,8 +43,7 @@
 		</font>
 	</Label>
 
-	<TextField fx:id="userCarPrice">
-	</TextField>
+	<TextField styleClass="box-field" fx:id="userCarPrice" />
 	
 	<Label text="After negotiations" 
 		textFill="#94a2a8">
@@ -65,8 +64,7 @@
 		</padding>
 	</Label>
 
-	<TextField fx:id="userDown">
-	</TextField>
+	<TextField styleClass="box-field" fx:id="userDown" />
 	
 	<Label text="Your trade-in can be all or part of a down payment"
 		textFill="#94a2a8">
@@ -87,8 +85,7 @@
 		</padding>
 	</Label>
 
-	<TextField fx:id="userInterest">
-	</TextField>
+	<TextField styleClass="box-field" fx:id="userInterest" />
 
 	<Label text="A higher credit score means lower interest rates"
 		textFill="#94a2a8">
@@ -109,8 +106,7 @@
 		</padding>
 	</Label>
 
-	<TextField fx:id="userMonths">
-	</TextField>
+	<TextField styleClass="box-field" fx:id="userMonths" />
 
 	<Label text="Suggested max: 36 months for used cars, 60 for new"
 		textFill="#94a2a8">
