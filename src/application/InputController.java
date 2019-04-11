@@ -5,19 +5,22 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class InputController {
-	
+
 	@FXML
 	private ComboBox<String> userCredit;
-	
+
 	@FXML
 	private Label creditExplain;
 	
 	@FXML
+	private TextField userMonths;
+	
+	@FXML
 	public void initialize() {
 		userCredit.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				switch (newValue) {
@@ -34,7 +37,8 @@ public class InputController {
 					creditExplain.setText("Based on your score, the average rate is 7.52% (new) or 10.34% (used).");
 					break;
 				default:
-					creditExplain.setText("Based on your score, the average rate is 14.41% (new) or 19.98% (used). Consider buying an inexpensive used car and refinancing in 6-12 months.");
+					creditExplain.setText(
+							"Based on your score, the average rate is 14.41% (new) or 19.98% (used). Consider buying an inexpensive used car and refinancing in 6-12 months.");
 				}
 			}
 		});

@@ -8,8 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import com.sun.javafx.scene.control.skin.InputField?>
 
-<VBox id="first-col" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InputController">
+<VBox id="firstCol" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InputController">
 	<padding>
 		<Insets top="25.0" />
 	</padding>
@@ -119,7 +120,7 @@
 	</Label>
 
 	<TextField styleClass="box-field" fx:id="userMonths" />
-
+	
 	<Label text="Suggested max: 36 months for used cars, 60 for new"
 		textFill="#94a2a8">
 		<padding>

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="second-col" xmlns:fx="http://javafx.com/fxml/1">
+<VBox id="second-col" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OutputController">
 	<padding>
 		<Insets top="25.0" />
 	</padding>
