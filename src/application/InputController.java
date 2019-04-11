@@ -1,19 +1,26 @@
 package application;
 
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 public class InputController {
-
+	
+	private OutputController outputController;
+	
 	@FXML
 	private ComboBox<String> userCredit;
 
 	@FXML
 	private Label creditExplain;
+	
+	@FXML
+	private TextField userCarPrice;
 	
 	@FXML
 	private TextField userMonths;
@@ -43,4 +50,17 @@ public class InputController {
 			}
 		});
 	}
+	
+	public void injectOutputController(OutputController outputController) {
+		this.outputController = outputController;
+	}
+	
+	@FXML
+	public void handleCarPriceAction(KeyEvent event) {
+		// May change based on calculation
+		outputController.setOutputMonthly(userCarPrice.getText());
+	}
+	
+	// TODO: Write more key handler in fxml and this inputcontroller like above function
+	// May need to declare more data fields at the top with @FXML...
 }

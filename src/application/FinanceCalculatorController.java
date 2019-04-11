@@ -3,7 +3,7 @@ package application;
 import javafx.fxml.FXML;
 
 public class FinanceCalculatorController {
-
+	
 	@FXML
 	private InputController inputController;
 	
@@ -12,6 +12,6 @@ public class FinanceCalculatorController {
 	
 	@FXML
 	public void initialize() {
-		// I will find a way to connect both controllers here
+		inputController.injectOutputController(outputController);
 	}
 }

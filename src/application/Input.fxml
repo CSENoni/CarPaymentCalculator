@@ -57,7 +57,7 @@
 		</font>
 	</Label>
 
-	<TextField styleClass="box-field" fx:id="userCarPrice" />
+	<TextField styleClass="box-field" fx:id="userCarPrice" onKeyReleased="#handleCarPriceAction" />
 
 	<Label text="After negotiations" textFill="#94a2a8">
 		<padding>

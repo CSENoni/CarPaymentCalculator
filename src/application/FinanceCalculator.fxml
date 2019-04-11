@@ -15,7 +15,7 @@
 	<Label fx:id="headerText" text="Car Payment Calculator" />
 
 	<HBox spacing="24" fillHeight="true">
-		<fx:include source="Input.fxml" />
-		<fx:include source="Output.fxml" />
+		<fx:include fx:id="input" source="Input.fxml" />
+		<fx:include fx:id="output" source="Output.fxml" />
 	</HBox>
 </VBox>
