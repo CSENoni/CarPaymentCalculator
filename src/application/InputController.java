@@ -73,11 +73,20 @@ public class InputController {
 	public void handleMonthAction(KeyEvent event) {
 		calculateAndShowMonthlyPayment();
 	}
-	// TODO: Write more key handler in fxml and this inputcontroller like above function
+	
+	@FXML
+	public void handleDownAction(KeyEvent event) {
+		calculateAndShowMonthlyPayment();
+	}
+	
+	@FXML
+	public void handleInterestAction(KeyEvent event) {
+		calculateAndShowMonthlyPayment();
+	}
+	
+	
+	// TODO: Create methods for calculating other outputs
 	// May need to declare more data fields at the top with @FXML...
-	
-	
-	
 	
 	
 	/******************Helper Functions************************/
