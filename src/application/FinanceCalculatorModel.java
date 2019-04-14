@@ -11,14 +11,14 @@ public class FinanceCalculatorModel {
 			return this.monthlyPayment;
 		}
 		else if (interest == 0) {
-			this.monthlyPayment = Math.round((carPrice - downPayment) / numberOfMonths * 100.00) / 100.0;
+			this.monthlyPayment = Math.round((carPrice - downPayment) / numberOfMonths * 100.0) / 100.0;
 			return this.monthlyPayment;
 		}
 		else {
 			double monthlyInterest = (interest / 100) / 12;
 			double bottom = (1 - (Math.pow((1 + monthlyInterest), -numberOfMonths)));
 			double top = (carPrice - downPayment) * monthlyInterest;
-			this.monthlyPayment = top / bottom;
+			this.monthlyPayment = Math.round(top / bottom * 100.0) / 100.0;
 			return this.monthlyPayment;
 		}
 	}
