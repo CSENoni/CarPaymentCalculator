@@ -11,11 +11,13 @@ public class FinanceCalculatorModel {
 		return monthlyPayment;
 	}
 
-	public double getTotalAmountPaid() {
-		return 0.0;
+	public double getTotalAmountPaid(double monthlyPayment, double numberOfMonths) {
+		double totalAmount = monthlyPayment*numberOfMonths;
+		return totalAmount;
 	}
 
-	public double getTotalInterestPaid() {
-		return 0.0;
+	public double getTotalInterestPaid(double totalAmount, double carPrice, double downPayment) {
+		double totalInterest = totalAmount - (carPrice - downPayment);
+		return totalInterest;
 	}
 }

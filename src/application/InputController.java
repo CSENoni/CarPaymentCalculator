@@ -67,21 +67,29 @@ public class InputController {
 	@FXML
 	public void handleCarPriceAction(KeyEvent event) {
 		calculateAndShowMonthlyPayment();
+		calculateAndShowTotalAmount();
+		calculateAndShowTotalInterest();
 	}
 	
 	@FXML
 	public void handleMonthAction(KeyEvent event) {
 		calculateAndShowMonthlyPayment();
+		calculateAndShowTotalAmount();
+		calculateAndShowTotalInterest();
 	}
 	
 	@FXML
 	public void handleDownAction(KeyEvent event) {
 		calculateAndShowMonthlyPayment();
+		calculateAndShowTotalAmount();
+		calculateAndShowTotalInterest();
 	}
 	
 	@FXML
 	public void handleInterestAction(KeyEvent event) {
 		calculateAndShowMonthlyPayment();
+		calculateAndShowTotalAmount();
+		calculateAndShowTotalInterest();
 	}
 	
 	
@@ -101,8 +109,29 @@ public class InputController {
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
 		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
 		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
-		
+
 		String monthlyPayment = "$" + model.getMonthlyPayment(price, downPayment, interest, months);
 		outputController.setOutputMonthly(monthlyPayment);
+		
+	}
+		
+	private void calculateAndShowTotalAmount() {	
+		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
+		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
+		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
+		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
+		
+		String totalAmount = "$" + (model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months));
+		outputController.setOutputTotalAmount(totalAmount);
+	}
+		
+	private void calculateAndShowTotalInterest() {
+		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
+		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
+		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
+		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
+		
+		String totalInterest = "S" + (model.getTotalInterestPaid(model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months), price, downPayment));
+		outputController.setOutputTotalInterest(totalInterest);
 	}
 }

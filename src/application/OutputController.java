@@ -14,5 +14,16 @@ public class OutputController {
 		this.outputMonthly.setText(text);
 	}
 	
+	private Label totalAmount;
+	
+	public void setOutputTotalAmount(String text) {
+		this.totalAmount.setText(text);
+	}
+	
+	private Label totalInterest;
+	
+	public void setOutputTotalInterest(String text) {
+		this.totalInterest.setText(text);
+	}
 	//TODO: Write methods to return output fields here like above...
 }
