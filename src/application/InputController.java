@@ -96,10 +96,6 @@ public class InputController {
 	}
 	
 	
-	// TODO: Create methods for calculating other outputs
-	// May need to declare more data fields at the top with @FXML...
-	
-	
 	/******************Helper Functions************************/
 	// Check to see if the string is empty or not
 	private boolean isNotEmpty(String text) {
