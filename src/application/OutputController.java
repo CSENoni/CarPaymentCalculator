@@ -8,22 +8,21 @@ public class OutputController {
 	@FXML
 	private Label outputMonthly;
 	
-	//TODO: Get more fields from output fields here like above...
-	
 	public void setOutputMonthly(String text) {
 		this.outputMonthly.setText(text);
 	}
 	
-	private Label totalAmount;
+	@FXML
+	private Label outputTotal;
 	
 	public void setOutputTotalAmount(String text) {
-		this.totalAmount.setText(text);
+		this.outputTotal.setText(text);
 	}
 	
-	private Label totalInterest;
+	@FXML
+	private Label outputInterest;
 	
 	public void setOutputTotalInterest(String text) {
-		this.totalInterest.setText(text);
+		this.outputInterest.setText(text);
 	}
-	//TODO: Write methods to return output fields here like above...
 }

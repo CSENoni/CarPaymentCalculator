@@ -1,6 +1,8 @@
 package application;
 
 
+import java.text.DecimalFormat;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -104,6 +106,9 @@ public class InputController {
 		return text != null && text.length() > 0;
 	}
 	
+	//Format decimal places
+	DecimalFormat decim = new DecimalFormat("#.00");
+	
 	// Calculate monthly payment.
 	private void calculateAndShowMonthlyPayment() {
 		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
@@ -111,30 +116,25 @@ public class InputController {
 		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
 		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 
-		String monthlyPayment = "$" + model.getMonthlyPayment(price, downPayment, interest, months);
+		String monthlyPayment = "$" + decim.format(model.getMonthlyPayment(price, downPayment, interest, months));
 		outputController.setOutputMonthly(monthlyPayment);
-		
 	}
 	
 	// Calculate total amount paid.
-	private void calculateAndShowTotalAmount() {	
-		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
+	private void calculateAndShowTotalAmount() {		
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
-		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
-		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
-		String totalAmount = "$" + (model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months));
+		String totalAmount = "$" + decim.format(model.getTotalAmountPaid(months));
 		outputController.setOutputTotalAmount(totalAmount);
 	}
 	
 	// Calculate total interest paid.
 	private void calculateAndShowTotalInterest() {
 		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
-		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
 		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
 		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
-		String totalInterest = "S" + (model.getTotalInterestPaid(model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months), price, downPayment));
+		String totalInterest = "$" + decim.format((model.getTotalInterestPaid(interest, price, downPayment)));
 		outputController.setOutputTotalInterest(totalInterest);
 	}
 }
