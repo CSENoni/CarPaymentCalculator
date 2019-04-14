@@ -123,7 +123,7 @@ public class InputController {
 		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
 		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
-		String totalAmount = "$" + (model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months));
+		String totalAmount = "$" + model.getTotalAmountPaid(price, downPayment, interest, months);
 		outputController.setOutputTotalAmount(totalAmount);
 	}
 	
@@ -134,7 +134,7 @@ public class InputController {
 		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
 		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
-		String totalInterest = "S" + (model.getTotalInterestPaid(model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months), price, downPayment));
+		String totalInterest = "$" + model.getTotalInterestPaid(price, downPayment, interest, months);
 		outputController.setOutputTotalInterest(totalInterest);
 	}
 }
