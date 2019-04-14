@@ -38,7 +38,7 @@
 	</ComboBox>
 
 	<Label fx:id="creditExplain" wrapText="true" styleClass="credit-explain"
-		text="Based on your score, the average rate is 3.68% (new) or 4.34% (used).">
+		text="Based on your score, the average rate is 3.08% (new) or 3.76% (used).">
 		<padding>
 			<Insets top="25.0" />
 		</padding>

@@ -44,18 +44,18 @@ public class InputController {
 					creditExplain.setText("Based on your score, the average rate is 3.08% (new) or 3.76% (used).");
 					break;
 				case "Prime (661-780)":
-					creditExplain.setText("Based on your score, the average rate is 4.56% (new) or 5.97% (used).");
+					creditExplain.setText("Based on your score, the average rate is 3.99% (new) or 5.45% (used).");
 					break;
 				case "Nonprime (601-660)":
-					creditExplain.setText("Based on your score, the average rate is 7.52% (new) or 10.34% (used).");
+					creditExplain.setText("Based on your score, the average rate is 6.83% (new) or 9.98% (used).");
 					break;
 				case "Subprime (501-600)":
-					creditExplain.setText("Based on your score, the average rate is 11.89% (new) or 16.14% (used).");
+					creditExplain.setText("Based on your score, the average rate is 11.11% (new) or 16.23% (used).");
 					break;
 				
 				default:
 					creditExplain.setText(
-							"Based on your score, the average rate is 14.41% (new) or 19.98% (used). Consider buying an inexpensive used car and refinancing in 6-12 months.");
+							"Based on your score, the average rate is 13.95% (new) or 19.38% (used). Consider buying an inexpensive used car and refinancing in 6-12 months.");
 				}
 			}
 		});
@@ -104,7 +104,7 @@ public class InputController {
 		return text != null && text.length() > 0;
 	}
 	
-	// Calculate monthly payment. TODO: Improve the calculation
+	// Calculate monthly payment.
 	private void calculateAndShowMonthlyPayment() {
 		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
@@ -115,7 +115,8 @@ public class InputController {
 		outputController.setOutputMonthly(monthlyPayment);
 		
 	}
-		
+	
+	// Calculate total amount paid.
 	private void calculateAndShowTotalAmount() {	
 		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
@@ -125,7 +126,8 @@ public class InputController {
 		String totalAmount = "$" + (model.getTotalAmountPaid(model.getMonthlyPayment(price, downPayment, interest, months), months));
 		outputController.setOutputTotalAmount(totalAmount);
 	}
-		
+	
+	// Calculate total interest paid.
 	private void calculateAndShowTotalInterest() {
 		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
