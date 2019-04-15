@@ -103,7 +103,7 @@ public class InputController {
 	}
 	
 	//Format decimal places
-	DecimalFormat decim = new DecimalFormat("#.00");
+	DecimalFormat decim = new DecimalFormat("#,###.00");
 	
 	// Calculate monthly payment.
 	private void calculateAndShowMonthlyPayment() {
