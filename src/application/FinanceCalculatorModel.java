@@ -27,7 +27,8 @@ public class FinanceCalculatorModel {
 	public double getfirstMonth(double carPrice, double downPayment, double interest, double months) {
 		if (interest == 0) {
 			if ((this.monthlyPayment * months) == (carPrice - downPayment)) {
-				return 0;
+				this.firstMonth = 0;
+				return this.firstMonth;
 			}
 			else
 				this.firstMonth = this.monthlyPayment + ((carPrice - downPayment) - (this.monthlyPayment * months));
@@ -35,7 +36,8 @@ public class FinanceCalculatorModel {
 				return this.firstMonth;
 		}
 		else {
-			return 0;
+			this.firstMonth = 0;
+			return this.firstMonth;
 		}
 	}
 
