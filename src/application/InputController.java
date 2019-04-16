@@ -99,7 +99,7 @@ public class InputController {
 	/******************Helper Functions************************/
 	// Check to see if the string is empty or not
 	private boolean isNotEmpty(String text) {
-		return text != null && text.length() > 0;
+		return text != null && text.matches("-?[0-9]+(\\.[0-9]+)?") && text.length() > 0;
 	}
 	
 	//Format decimal places
@@ -111,7 +111,8 @@ public class InputController {
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
 		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
 		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
-
+		
+		months = checkMonths(months);
 		String monthlyPayment = "$" + decim.format(model.getMonthlyPayment(price, downPayment, interest, months));
 		outputController.setOutputMonthly(monthlyPayment);
 	}
@@ -132,5 +133,16 @@ public class InputController {
 		
 		String totalInterest = "$" + decim.format((model.getTotalInterestPaid(interest, price, downPayment)));
 		outputController.setOutputTotalInterest(totalInterest);
+	}
+	
+	// Check months [1, 84]
+	private double checkMonths(double months) {
+		if(months <= 0.0 || months > 84) {
+			userMonths.setStyle("-fx-border-color: red;");
+			return 0.0;
+		}else {
+			userMonths.setStyle("-fx-border-color: #d2d7dc");
+			return months;
+		}
 	}
 }

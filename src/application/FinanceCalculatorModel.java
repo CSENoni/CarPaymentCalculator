@@ -37,6 +37,4 @@ public class FinanceCalculatorModel {
 			return totalInterest;
 		}
 	}
-	
-	//TODO: Edit so that all monthly payments added together = carprice 
 }

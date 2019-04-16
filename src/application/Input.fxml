@@ -119,7 +119,7 @@
 		</padding>
 	</Label>
 
-	<TextField styleClass="box-field" fx:id="userMonths" onKeyReleased="#handleMonthAction" />
+	<TextField styleClass="box-field" fx:id="userMonths" text="1" onKeyReleased="#handleMonthAction" />
 	
 	<Label text="Suggested max: 36 months for used cars, 60 for new"
 		textFill="#94a2a8">
