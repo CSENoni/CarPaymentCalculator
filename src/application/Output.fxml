@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox id="second-col" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OutputController">
 	<padding>
@@ -25,9 +25,15 @@
       </font>
    </Label>
    
-   <Label fx:id="outputMonthly"	textFill="#005fb9">
+   <Label fx:id="outputMonthly" textFill="#005fb9">
       <font>
          <Font name="Arial" size="22.0" />
+      </font>
+   </Label>
+   
+   <Label fx:id="firstMonth" textFill="#005fb9">
+      <font>
+         <Font name="Arial" size="15.0" />
       </font>
    </Label>
    

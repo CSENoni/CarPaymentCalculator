@@ -4,6 +4,7 @@ public class FinanceCalculatorModel {
 	
 	private double monthlyPayment;
 	private double totalAmount;
+	private double firstMonth;
 		
 	public double getMonthlyPayment(double carPrice, double downPayment, double interest, double numberOfMonths) {
 		if (numberOfMonths == 0) {
@@ -22,10 +23,31 @@ public class FinanceCalculatorModel {
 			return this.monthlyPayment;
 		}
 	}
+	
+	public double getfirstMonth(double carPrice, double downPayment, double interest, double months) {
+		if (interest == 0) {
+			if ((this.monthlyPayment * months) == (carPrice - downPayment)) {
+				return 0;
+			}
+			else
+				this.firstMonth = this.monthlyPayment + ((carPrice - downPayment) - (this.monthlyPayment * months));
+				this.firstMonth = Math.round(this.firstMonth * 100.0) / 100.0;
+				return this.firstMonth;
+		}
+		else {
+			return 0;
+		}
+	}
 
-	public double getTotalAmountPaid(double numberOfMonths) {
-		this.totalAmount = this.monthlyPayment * numberOfMonths;
-		return this.totalAmount;
+	public double getTotalAmountPaid(double interest, double numberOfMonths) {
+		if (interest == 0) {
+			this.totalAmount = (this.monthlyPayment * (numberOfMonths - 1)) + this.firstMonth;
+			return this.totalAmount;
+		}
+		else {
+			this.totalAmount = this.monthlyPayment * numberOfMonths;
+			return this.totalAmount;
+		}
 	}
 
 	public double getTotalInterestPaid(double interest, double carPrice, double downPayment) {

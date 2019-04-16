@@ -25,4 +25,11 @@ public class OutputController {
 	public void setOutputTotalInterest(String text) {
 		this.outputInterest.setText(text);
 	}
+	
+	@FXML
+	private Label firstMonth;
+	
+	public void setfirstMonth(String text) {
+		this.firstMonth.setText(text);
+	}
 }

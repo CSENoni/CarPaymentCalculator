@@ -102,8 +102,19 @@ public class InputController {
 		return text != null && text.matches("-?[0-9]+(\\.[0-9]+)?") && text.length() > 0;
 	}
 	
+	private String checkFirstMonth(double value) {
+		if (value == 0) {
+			return "";
+		}
+		else {
+			return "(First Month's Payment will be: $" + decim.format(value) + ")";
+		}
+		
+	}
+	
 	//Format decimal places
 	DecimalFormat decim = new DecimalFormat("#,###.00");
+	
 	
 	// Calculate monthly payment.
 	private void calculateAndShowMonthlyPayment() {
@@ -115,13 +126,15 @@ public class InputController {
 		months = checkMonths(months);
 		String monthlyPayment = "$" + decim.format(model.getMonthlyPayment(price, downPayment, interest, months));
 		outputController.setOutputMonthly(monthlyPayment);
+		outputController.setfirstMonth(checkFirstMonth(model.getfirstMonth(price, downPayment, interest, months)));
 	}
 	
 	// Calculate total amount paid.
 	private void calculateAndShowTotalAmount() {		
 		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
+		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
-		String totalAmount = "$" + decim.format(model.getTotalAmountPaid(months));
+		String totalAmount = "$" + decim.format(model.getTotalAmountPaid(interest, months));
 		outputController.setOutputTotalAmount(totalAmount);
 	}
 	
@@ -140,7 +153,8 @@ public class InputController {
 		if(months <= 0.0 || months > 84) {
 			userMonths.setStyle("-fx-border-color: red;");
 			return 0.0;
-		}else {
+		}
+		else {
 			userMonths.setStyle("-fx-border-color: #d2d7dc");
 			return months;
 		}
