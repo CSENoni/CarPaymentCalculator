@@ -12,7 +12,7 @@
 	xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="application.FinanceCalculatorController">
 
-	<Label fx:id="headerText" text="Car Payment Calculator" />
+	<Label fx:id="headerText" text="Car payment calculator" />
 
 	<HBox spacing="24" fillHeight="true">
 		<fx:include fx:id="input" source="Input.fxml" />

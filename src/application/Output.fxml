@@ -23,6 +23,9 @@
       <font>
          <Font name="Arial Bold" size="14.0" />
       </font>
+      <padding>
+      	<Insets bottom="8.0" />
+      </padding>
    </Label>
    
    <Label fx:id="outputMonthly" textFill="#005fb9">
@@ -50,6 +53,9 @@
       <font>
          <Font name="Arial Bold" size="14.0" />
       </font>
+      <padding>
+      	<Insets bottom="8.0" />
+      </padding>
    </Label>
    
    <Label fx:id="outputTotal" text="\$0.00" textFill="#005fb9">
@@ -71,6 +77,9 @@
       <font>
          <Font name="Arial Bold" size="14.0" />
       </font>
+      <padding>
+      	<Insets bottom="8.0" />
+      </padding>
    </Label>
    
    <Label fx:id="outputInterest" text="\$0.00" textFill="#005fb9">

@@ -5,7 +5,6 @@
 	-fx-background-color: white;
 	-fx-font-size: 14px;
 	-fx-font-weight: 400;
-	-fx-font-family: Gotham, system-ui, sans-serif;
 	-fx-padding: 40px 30px;
 }
 
@@ -41,5 +40,5 @@
 }
 
 .text-input {
-	-fx-padding: 0 0 0 15px;
+	-fx-padding: 0 0 0 12px;
 }
