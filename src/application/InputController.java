@@ -97,9 +97,13 @@ public class InputController {
 	
 	
 	/******************Helper Functions************************/
-	// Check to see if the string is empty or not
-	private boolean isNotEmpty(String text) {
-		return text != null && text.matches("-?[0-9]+(\\.[0-9]+)?") && text.length() > 0;
+	// Check to see if the string is empty or contains negative input
+	private boolean isValid(String text) {
+		return text != null && text.length() != 0 && text.matches("^[0-9]+$");
+	}
+	
+	private boolean isNotText(String text) {
+		return text.contains ("0,1,2,3,4,5,6,7,8,9");
 	}
 	
 	private String checkFirstMonth(double value) {
@@ -118,10 +122,10 @@ public class InputController {
 	
 	// Calculate monthly payment.
 	private void calculateAndShowMonthlyPayment() {
-		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
-		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
-		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
-		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
+		double price = (isValid(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
+		double months = (isValid(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
+		double downPayment = (isValid(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
+		double interest = (isValid(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
 		months = checkMonths(months);
 		String monthlyPayment = "$" + decim.format(model.getMonthlyPayment(price, downPayment, interest, months));
@@ -131,8 +135,8 @@ public class InputController {
 	
 	// Calculate total amount paid.
 	private void calculateAndShowTotalAmount() {		
-		double months = (isNotEmpty(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
-		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
+		double months = (isValid(userMonths.getText())) ? Double.parseDouble(userMonths.getText()) : 0.0;
+		double interest = (isValid(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
 		String totalAmount = "$" + decim.format(model.getTotalAmountPaid(interest, months));
 		outputController.setOutputTotalAmount(totalAmount);
@@ -140,9 +144,9 @@ public class InputController {
 	
 	// Calculate total interest paid.
 	private void calculateAndShowTotalInterest() {
-		double price = (isNotEmpty(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
-		double downPayment = (isNotEmpty(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
-		double interest = (isNotEmpty(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
+		double price = (isValid(userCarPrice.getText())) ? Double.parseDouble(userCarPrice.getText()) : 0.0;
+		double downPayment = (isValid(userDown.getText())) ? Double.parseDouble(userDown.getText()) : 0.0;
+		double interest = (isValid(userInterest.getText())) ? Double.parseDouble(userInterest.getText()) : 0.0;
 		
 		String totalInterest = "$" + decim.format((model.getTotalInterestPaid(interest, price, downPayment)));
 		outputController.setOutputTotalInterest(totalInterest);
@@ -158,5 +162,6 @@ public class InputController {
 			userMonths.setStyle("-fx-border-color: #d2d7dc");
 			return months;
 		}
+	
 	}
 }
