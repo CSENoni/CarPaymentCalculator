@@ -130,7 +130,8 @@ public class InputController {
 		months = checkMonths(months);
 		String monthlyPayment = "$" + decim.format(model.getMonthlyPayment(price, downPayment, interest, months));
 		outputController.setOutputMonthly(monthlyPayment);
-		outputController.setfirstMonth(checkFirstMonth(model.getfirstMonth(price, downPayment, interest, months)));
+		if(months != 0)
+			outputController.setfirstMonth(checkFirstMonth(model.getfirstMonth(price, downPayment, interest, months)));
 	}
 	
 	// Calculate total amount paid.
