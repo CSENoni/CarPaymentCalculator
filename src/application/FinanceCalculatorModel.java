@@ -42,12 +42,12 @@ public class FinanceCalculatorModel {
 	}
 
 	public double getTotalAmountPaid(double interest, double numberOfMonths) {
-		if (this.firstMonth != 0) {
-			this.totalAmount = (this.monthlyPayment * (numberOfMonths - 1)) + this.firstMonth;
+		if (this.firstMonth == 0) {
+			this.totalAmount = this.monthlyPayment * numberOfMonths;
 			return this.totalAmount;
 		}
 		else {
-			this.totalAmount = this.monthlyPayment * numberOfMonths;
+			this.totalAmount = (this.monthlyPayment * (numberOfMonths - 1)) + this.firstMonth;
 			return this.totalAmount;
 		}
 	}

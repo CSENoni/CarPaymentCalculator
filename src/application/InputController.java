@@ -99,7 +99,7 @@ public class InputController {
 	/******************Helper Functions************************/
 	// Check to see if the string is empty or contains negative input
 	private boolean isValid(String text) {
-		return text != null && text.length() != 0 && text.matches("^[0-9]+$");
+		return text != null && text.length() != 0 && text.matches("^[0-9.]*+$");
 	}
 	
 	private boolean isNotText(String text) {
